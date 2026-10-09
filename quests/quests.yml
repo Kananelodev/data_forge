@@ -1,0 +1,189 @@
+# THE QUEST MAP
+# -------------
+# Each region is a stage of the data-engineering lifecycle. Each quest is one
+# fundamental. A quest is FORGED (complete) only when BOTH:
+#   1. its gate passes  (gates/<file>.py — tests you make green), and
+#   2. you've written a real journal entry (journal/<id>.md) explaining it back.
+#
+# `gate: null` = reflection-only quest (journal is the whole gate).
+# A gate path that doesn't exist yet = "forthcoming": on the map, not yet
+# playable. We forge those gates together in mentor sessions as you arrive.
+
+regions:
+  - id: foundations
+    order: 1
+    name: Foundry Floor
+    blurb: How data is stored, and why analytics storage is different.
+  - id: sql
+    order: 2
+    name: Query Crucible
+    blurb: SQL deep enough to answer anything — and to know why it's slow.
+  - id: ingestion
+    order: 3
+    name: Ore Mines
+    blurb: Getting data in — files, formats, batch vs streaming.
+  - id: modelling
+    order: 4
+    name: Shaping Anvil
+    blurb: Structuring tables so questions are cheap to answer.
+  - id: pipelines
+    order: 5
+    name: Long Furnace
+    blurb: Pipelines that survive failure, re-runs, and bad data.
+  - id: governance
+    order: 6
+    name: Passport Office
+    blurb: PII, residency, POPIA — data that moves carries responsibility.
+  - id: cloud
+    order: 7
+    name: Cloud Citadel
+    blurb: Everything you built locally, mapped onto AWS.
+
+quests:
+  # ───────────── Foundry Floor ─────────────
+  - id: q01
+    title: Two Kinds of Database
+    region: foundations
+    xp: 100
+    teaches: OLTP vs OLAP; row vs columnar storage — why analytics scans less
+    gate: gates/test_q01_storage.py
+    requires: []
+
+  - id: q02
+    title: Light the Warehouse
+    region: foundations
+    xp: 150
+    teaches: DuckDB as an OLAP engine; schemas; medallion (bronze/silver/gold) layers
+    maps_to: passport-pipeline Iteration 1
+    gate: gates/test_q02_warehouse.py
+    requires: [q01]
+
+  # ───────────── Query Crucible ─────────────
+  - id: q03
+    title: Weigh the Ore
+    region: sql
+    xp: 150
+    teaches: GROUP BY, aggregates, HAVING, ORDER BY
+    gate: gates/test_q03_aggregates.py
+    requires: [q02]
+
+  - id: q04
+    title: Windows into the Fire
+    region: sql
+    xp: 200
+    teaches: Window functions — running totals, ranking, PARTITION BY
+    gate: gates/test_q04_windows.py
+    requires: [q03]
+
+  - id: q05
+    title: Read the Smoke
+    region: sql
+    xp: 200
+    teaches: Reading EXPLAIN query plans; finding the expensive operation
+    gate: gates/test_q05_plans.py
+    requires: [q04]
+
+  - id: q06
+    title: Join the Metals
+    region: sql
+    xp: 200
+    teaches: Joins, CTEs, NULL traps, fan-out duplication
+    gate: gates/test_q06_joins.py
+    requires: [q04]
+
+  # ───────────── Ore Mines ─────────────
+  - id: q07
+    title: Ore from the Mountain
+    region: ingestion
+    xp: 150
+    teaches: Python ingestion of CSV/JSON; raw is immutable; lineage columns
+    maps_to: passport-pipeline Iteration 2
+    gate: gates/test_q07_ingest.py
+    requires: [q05, q06]
+
+  - id: q08
+    title: Parquet Ingots
+    region: ingestion
+    xp: 150
+    teaches: File formats (CSV vs Parquet), compression, partitioning
+    gate: gates/test_q08_formats.py
+    requires: [q07]
+
+  - id: q09
+    title: Rivers and Buckets
+    region: ingestion
+    xp: 200
+    teaches: Batch vs streaming; incremental loads with watermarks
+    gate: gates/test_q09_incremental.py
+    requires: [q08]
+
+  # ───────────── Shaping Anvil ─────────────
+  - id: q10
+    title: Facts and Dimensions
+    region: modelling
+    xp: 200
+    teaches: Dimensional modelling, star schemas, grain
+    gate: gates/test_q10_star.py
+    requires: [q09]
+
+  - id: q11
+    title: Slowly Changing Ore
+    region: modelling
+    xp: 200
+    teaches: Slowly changing dimensions (SCD Type 2) — keeping history
+    gate: gates/test_q11_scd.py
+    requires: [q10]
+
+  # ───────────── Long Furnace ─────────────
+  - id: q12
+    title: Strike Twice, Same Blade
+    region: pipelines
+    xp: 250
+    teaches: Idempotency — upserts/MERGE, truncate-and-reload, run keys
+    maps_to: passport-pipeline Iteration 6
+    gate: gates/test_q12_idempotency.py
+    requires: [q11]
+
+  - id: q13
+    title: Quality at the Gate
+    region: pipelines
+    xp: 200
+    teaches: Data quality checks, data contracts, quarantine instead of silent drops
+    maps_to: passport-pipeline Iteration 3
+    gate: gates/test_q13_quality.py
+    requires: [q12]
+
+  - id: q14
+    title: The Conductor
+    region: pipelines
+    xp: 200
+    teaches: Orchestration — DAGs, dependencies, retries, backfills
+    gate: gates/test_q14_dag.py
+    requires: [q13]
+
+  # ───────────── Passport Office ─────────────
+  - id: q15
+    title: Your Database Has a Passport
+    region: governance
+    xp: 300
+    teaches: PII masking vs hashing vs tokenising; residency; POPIA cross-border rules
+    maps_to: passport-pipeline Iteration 4
+    gate: gates/test_q15_passport.py
+    requires: [q13]
+
+  # ───────────── Cloud Citadel ─────────────
+  - id: q16
+    title: Ascend to the Cloud
+    region: cloud
+    xp: 250
+    teaches: Mapping the local stack to S3, Glue, Athena, Redshift; regions & cost
+    gate: gates/test_q16_cloud_map.py
+    requires: [q14, q15]
+
+  - id: q17
+    title: "Boss: Explain the Forge"
+    region: cloud
+    xp: 400
+    teaches: Mock interview — defend every design choice in passport-pipeline out loud
+    gate: null
+    requires: [q16]

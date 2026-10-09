@@ -1,0 +1,9 @@
+[project]
+name = "data-forge"
+version = "0.1.0"
+description = "A gamified journey to mastering data engineering fundamentals"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = [".", "solutions"]
+testpaths = ["gates"]
