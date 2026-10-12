@@ -11,7 +11,7 @@ Every push re-strikes the gates and redraws this board.
 
 ### ⚒️ Rank: **Cinder** — _the forge is cold — strike the first spark_
 
-`░░░░░░░░░░░░░░░░░░░░░░░░` **0 XP** · 150 XP to **Striker**
+`░░░░░░░░░░░░░░░░░░░░░░░░` **0 XP** · 150 XP to **Striker** ,
 
 **Quests:** 0/17 forged · **Streak:** 0 day(s) · **Days at the anvil:** 0 · **Forge heat:** ❄️
 
