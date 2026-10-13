@@ -1,12 +1,17 @@
 VENV=.venv
-PY=$(VENV)/bin/python
+ifeq ($(OS),Windows_NT)
+BIN=$(VENV)/Scripts
+else
+BIN=$(VENV)/bin
+endif
+PY=$(BIN)/python
 
 .PHONY: setup play gates quest
 
 setup:            ## create venv + install deps
-	python3 -m venv $(VENV)
-	$(VENV)/bin/pip install -q --upgrade pip
-	$(VENV)/bin/pip install -q -r requirements.txt
+	python -m venv $(VENV)
+	$(PY) -m pip install -q --upgrade pip
+	$(PY) -m pip install -q -r requirements.txt
 	@echo "Forge ready. Run 'make play'."
 
 play:             ## take a turn: strike gates, update board + map (same as a push)

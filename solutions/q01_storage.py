@@ -27,7 +27,12 @@ def bytes_scanned(store: str, total_cols: int, selected_cols: int,
     Raise ValueError for any other store type.
     (Ignore compression and indexes — this is the core intuition only.)
     """
-    raise NotImplementedError
+    if store == "row":
+        return total_cols * rows * bytes_per_cell
+    elif store == "column":
+        return selected_cols * rows * bytes_per_cell
+    else:
+        raise ValueError(f"Unknown store type: {store}")
 
 
 def best_store_for(workload: dict) -> str:
@@ -42,4 +47,16 @@ def best_store_for(workload: dict) -> str:
     Decide which signals point which way and implement the rule. Your journal
     should justify it.
     """
-    raise NotImplementedError
+
+    for key, value in workload.items():
+        if key == "single_record_lookups" and value:
+            return "OLTP"
+        elif key == "frequent_updates" and value:
+            return "OLTP"
+        elif key == "scans_many_rows" and value:
+            return "OLAP"
+        elif key == "few_columns_per_query" and value:
+            return "OLAP"
+        
+ 
+    
