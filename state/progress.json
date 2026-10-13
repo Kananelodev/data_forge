@@ -1,0 +1,277 @@
+{
+  "xp": 100,
+  "rank": {
+    "index": 0,
+    "name": "Cinder",
+    "flavour": "the forge is cold \u2014 strike the first spark",
+    "floor": 0,
+    "next_name": "Striker",
+    "next_floor": 150,
+    "pct_to_next": 67,
+    "xp_to_next": 50,
+    "is_max": false
+  },
+  "regions": [
+    {
+      "id": "foundations",
+      "name": "Foundry Floor",
+      "order": 1,
+      "blurb": "How data is stored, and why analytics storage is different.",
+      "total": 2,
+      "done": 1,
+      "state": "active"
+    },
+    {
+      "id": "sql",
+      "name": "Query Crucible",
+      "order": 2,
+      "blurb": "SQL deep enough to answer anything \u2014 and to know why it's slow.",
+      "total": 4,
+      "done": 0,
+      "state": "locked"
+    },
+    {
+      "id": "ingestion",
+      "name": "Ore Mines",
+      "order": 3,
+      "blurb": "Getting data in \u2014 files, formats, batch vs streaming.",
+      "total": 3,
+      "done": 0,
+      "state": "locked"
+    },
+    {
+      "id": "modelling",
+      "name": "Shaping Anvil",
+      "order": 4,
+      "blurb": "Structuring tables so questions are cheap to answer.",
+      "total": 2,
+      "done": 0,
+      "state": "locked"
+    },
+    {
+      "id": "pipelines",
+      "name": "Long Furnace",
+      "order": 5,
+      "blurb": "Pipelines that survive failure, re-runs, and bad data.",
+      "total": 3,
+      "done": 0,
+      "state": "locked"
+    },
+    {
+      "id": "governance",
+      "name": "Passport Office",
+      "order": 6,
+      "blurb": "PII, residency, POPIA \u2014 data that moves carries responsibility.",
+      "total": 1,
+      "done": 0,
+      "state": "locked"
+    },
+    {
+      "id": "cloud",
+      "name": "Cloud Citadel",
+      "order": 7,
+      "blurb": "Everything you built locally, mapped onto AWS.",
+      "total": 2,
+      "done": 0,
+      "state": "locked"
+    }
+  ],
+  "quests": [
+    {
+      "id": "q01",
+      "title": "Two Kinds of Database",
+      "region": "foundations",
+      "xp": 100,
+      "teaches": "OLTP vs OLAP; row vs columnar storage \u2014 why analytics scans less",
+      "maps_to": null,
+      "status": "complete",
+      "gate_ok": true,
+      "reflected": true
+    },
+    {
+      "id": "q02",
+      "title": "Light the Warehouse",
+      "region": "foundations",
+      "xp": 150,
+      "teaches": "DuckDB as an OLAP engine; schemas; medallion (bronze/silver/gold) layers",
+      "maps_to": "passport-pipeline Iteration 1",
+      "status": "available",
+      "gate_ok": false,
+      "reflected": false
+    },
+    {
+      "id": "q03",
+      "title": "Weigh the Ore",
+      "region": "sql",
+      "xp": 150,
+      "teaches": "GROUP BY, aggregates, HAVING, ORDER BY",
+      "maps_to": null,
+      "status": "locked",
+      "gate_ok": false,
+      "reflected": false
+    },
+    {
+      "id": "q04",
+      "title": "Windows into the Fire",
+      "region": "sql",
+      "xp": 200,
+      "teaches": "Window functions \u2014 running totals, ranking, PARTITION BY",
+      "maps_to": null,
+      "status": "locked",
+      "gate_ok": false,
+      "reflected": false
+    },
+    {
+      "id": "q05",
+      "title": "Read the Smoke",
+      "region": "sql",
+      "xp": 200,
+      "teaches": "Reading EXPLAIN query plans; finding the expensive operation",
+      "maps_to": null,
+      "status": "locked",
+      "gate_ok": false,
+      "reflected": false
+    },
+    {
+      "id": "q06",
+      "title": "Join the Metals",
+      "region": "sql",
+      "xp": 200,
+      "teaches": "Joins, CTEs, NULL traps, fan-out duplication",
+      "maps_to": null,
+      "status": "forthcoming",
+      "gate_ok": false,
+      "reflected": false
+    },
+    {
+      "id": "q07",
+      "title": "Ore from the Mountain",
+      "region": "ingestion",
+      "xp": 150,
+      "teaches": "Python ingestion of CSV/JSON; raw is immutable; lineage columns",
+      "maps_to": "passport-pipeline Iteration 2",
+      "status": "forthcoming",
+      "gate_ok": false,
+      "reflected": false
+    },
+    {
+      "id": "q08",
+      "title": "Parquet Ingots",
+      "region": "ingestion",
+      "xp": 150,
+      "teaches": "File formats (CSV vs Parquet), compression, partitioning",
+      "maps_to": null,
+      "status": "forthcoming",
+      "gate_ok": false,
+      "reflected": false
+    },
+    {
+      "id": "q09",
+      "title": "Rivers and Buckets",
+      "region": "ingestion",
+      "xp": 200,
+      "teaches": "Batch vs streaming; incremental loads with watermarks",
+      "maps_to": null,
+      "status": "forthcoming",
+      "gate_ok": false,
+      "reflected": false
+    },
+    {
+      "id": "q10",
+      "title": "Facts and Dimensions",
+      "region": "modelling",
+      "xp": 200,
+      "teaches": "Dimensional modelling, star schemas, grain",
+      "maps_to": null,
+      "status": "forthcoming",
+      "gate_ok": false,
+      "reflected": false
+    },
+    {
+      "id": "q11",
+      "title": "Slowly Changing Ore",
+      "region": "modelling",
+      "xp": 200,
+      "teaches": "Slowly changing dimensions (SCD Type 2) \u2014 keeping history",
+      "maps_to": null,
+      "status": "forthcoming",
+      "gate_ok": false,
+      "reflected": false
+    },
+    {
+      "id": "q12",
+      "title": "Strike Twice, Same Blade",
+      "region": "pipelines",
+      "xp": 250,
+      "teaches": "Idempotency \u2014 upserts/MERGE, truncate-and-reload, run keys",
+      "maps_to": "passport-pipeline Iteration 6",
+      "status": "forthcoming",
+      "gate_ok": false,
+      "reflected": false
+    },
+    {
+      "id": "q13",
+      "title": "Quality at the Gate",
+      "region": "pipelines",
+      "xp": 200,
+      "teaches": "Data quality checks, data contracts, quarantine instead of silent drops",
+      "maps_to": "passport-pipeline Iteration 3",
+      "status": "forthcoming",
+      "gate_ok": false,
+      "reflected": false
+    },
+    {
+      "id": "q14",
+      "title": "The Conductor",
+      "region": "pipelines",
+      "xp": 200,
+      "teaches": "Orchestration \u2014 DAGs, dependencies, retries, backfills",
+      "maps_to": null,
+      "status": "forthcoming",
+      "gate_ok": false,
+      "reflected": false
+    },
+    {
+      "id": "q15",
+      "title": "Your Database Has a Passport",
+      "region": "governance",
+      "xp": 300,
+      "teaches": "PII masking vs hashing vs tokenising; residency; POPIA cross-border rules",
+      "maps_to": "passport-pipeline Iteration 4",
+      "status": "forthcoming",
+      "gate_ok": false,
+      "reflected": false
+    },
+    {
+      "id": "q16",
+      "title": "Ascend to the Cloud",
+      "region": "cloud",
+      "xp": 250,
+      "teaches": "Mapping the local stack to S3, Glue, Athena, Redshift; regions & cost",
+      "maps_to": null,
+      "status": "forthcoming",
+      "gate_ok": false,
+      "reflected": false
+    },
+    {
+      "id": "q17",
+      "title": "Boss: Explain the Forge",
+      "region": "cloud",
+      "xp": 400,
+      "teaches": "Mock interview \u2014 defend every design choice in passport-pipeline out loud",
+      "maps_to": null,
+      "status": "locked",
+      "gate_ok": true,
+      "reflected": false
+    }
+  ],
+  "counts": {
+    "complete": 1,
+    "total": 17,
+    "playable": 6
+  },
+  "streak": 1,
+  "heat": 1,
+  "days_active": 1,
+  "generated_for": "2026-10-13"
+}
