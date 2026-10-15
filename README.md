@@ -16,7 +16,7 @@ Every push re-strikes the gates and redraws this board.
 **Quests:** 1/17 forged · **Streak:** 1 day(s) · **Days at the anvil:** 1 · **Forge heat:** 🔥
 
 #### 📣 Last push
-- 🔥 The forge is lit for the first time. Your journey begins.
+- 🔨 Progress committed. The fire holds steady — keep striking.
 
 #### 🎯 Next on the anvil
 - 🟠 **q02 · Light the Warehouse** (+150 XP)
@@ -58,7 +58,7 @@ Every push re-strikes the gates and redraws this board.
 Legend: ✅ forged · 🔨 half-done · 🟠 available · 🔒 locked · ⚒️ gate not forged yet
 </details>
 
-<sub>Board regenerated automatically on push · 2026-10-13</sub>
+<sub>Board regenerated automatically on push · 2026-10-15</sub>
 <!-- FORGE:END -->
 
 ---
