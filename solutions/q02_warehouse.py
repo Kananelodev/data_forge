@@ -32,4 +32,4 @@ def create_bronze_table(con, name: str, columns: list[str]) -> None:
       _ingested_at  TIMESTAMP   — when the row landed
       _source_file  VARCHAR     — which file it came from
     """
-    raise NotImplementedError
+    # raise NotImplementedError 

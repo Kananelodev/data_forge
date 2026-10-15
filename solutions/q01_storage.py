@@ -48,15 +48,17 @@ def best_store_for(workload: dict) -> str:
     should justify it.
     """
 
-    for key, value in workload.items():
-        if key == "single_record_lookups" and value:
-            return "OLTP"
-        elif key == "frequent_updates" and value:
-            return "OLTP"
-        elif key == "scans_many_rows" and value:
-            return "OLAP"
-        elif key == "few_columns_per_query" and value:
-            return "OLAP"
+    # If the workload involves single record lookups or frequent updates, it is
+    # better suited for OLTP (row-based storage). If it involves scanning many
+    # rows and only needs a few columns per query, it is better suited for OLAP
+    # (column-based storage).
+    if workload.get("single_record_lookups", False) or workload.get("frequent_updates", False):
+        return "OLTP"
+    elif workload.get("scans_many_rows", False) and workload.get("few_columns_per_query", False):
+        return "OLAP"
+    else:
+        # Default to OLTP if no clear indication is given
+        return "OLTP"
         
  
     
