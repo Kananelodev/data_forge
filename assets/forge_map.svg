@@ -9,15 +9,16 @@
 <text x="40" y="58" fill="#ff8c2a" font-size="30" font-weight="700" letter-spacing="6">DATA FORGE</text>
 <text x="40" y="86" fill="#8a7f74" font-size="14">Kananelo Mofokeng · data engineering, forged by hand</text>
 <text x="920" y="52" text-anchor="end" fill="#f3e9dc" font-size="20" font-weight="700">Cinder</text>
-<text x="920" y="74" text-anchor="end" fill="#8a7f74" font-size="13">0 XP · 0/17 quests</text>
+<text x="920" y="74" text-anchor="end" fill="#8a7f74" font-size="13">100 XP · 1/17 quests</text>
 <rect x="660" y="88" width="260" height="10" rx="5" fill="#2b2420"/>
-<rect x="660" y="88" width="0.0" height="10" rx="5" fill="#ff8c2a"><animate attributeName="opacity" values="0.75;1;0.75" dur="2.4s" repeatCount="indefinite"/></rect>
-<text x="920" y="114" text-anchor="end" fill="#8a7f74" font-size="11">150 XP → Striker</text>
+<rect x="660" y="88" width="174.2" height="10" rx="5" fill="#ff8c2a"><animate attributeName="opacity" values="0.75;1;0.75" dur="2.4s" repeatCount="indefinite"/></rect>
+<text x="920" y="114" text-anchor="end" fill="#8a7f74" font-size="11">50 XP → Striker</text>
 <line x1="90" y1="210" x2="870" y2="210" stroke="#4a403a" stroke-width="4" stroke-dasharray="2 10" stroke-linecap="round"/>
+<circle cx="90.0" cy="210" r="40" fill="url(#glow)"><animate attributeName="r" values="34;44;34" dur="1.8s" repeatCount="indefinite"/></circle>
 <circle cx="90.0" cy="210" r="26" fill="#1f1a17" stroke="#ff8c2a" stroke-width="4"/>
 <text x="90.0" y="217" text-anchor="middle" font-size="20" fill="#ff8c2a">▲</text>
 <text x="90.0" y="262" text-anchor="middle" font-size="12" fill="#f3e9dc" font-weight="600">Foundry Floor</text>
-<text x="90.0" y="280" text-anchor="middle" font-size="11" fill="#8a7f74">0/2</text>
+<text x="90.0" y="280" text-anchor="middle" font-size="11" fill="#8a7f74">1/2</text>
 <circle cx="220.0" cy="210" r="26" fill="#1f1a17" stroke="#3a332e" stroke-width="4"/>
 <text x="220.0" y="217" text-anchor="middle" font-size="20" fill="#3a332e">◌</text>
 <text x="220.0" y="262" text-anchor="middle" font-size="12" fill="#8a7f74" font-weight="600">Query Crucible</text>
@@ -43,10 +44,10 @@
 <text x="870.0" y="262" text-anchor="middle" font-size="12" fill="#8a7f74" font-weight="600">Cloud Citadel</text>
 <text x="870.0" y="280" text-anchor="middle" font-size="11" fill="#8a7f74">0/2</text>
 <text x="40" y="304" fill="#8a7f74" font-size="12">forge heat</text>
-<rect x="120" y="293" width="12" height="12" rx="3" fill="#3a332e"/>
+<rect x="120" y="293" width="12" height="12" rx="3" fill="#ff8c2a"/>
 <rect x="138" y="293" width="12" height="12" rx="3" fill="#3a332e"/>
 <rect x="156" y="293" width="12" height="12" rx="3" fill="#3a332e"/>
 <rect x="174" y="293" width="12" height="12" rx="3" fill="#3a332e"/>
 <rect x="192" y="293" width="12" height="12" rx="3" fill="#3a332e"/>
-<text x="920" y="304" text-anchor="end" fill="#8a7f74" font-size="12">streak 0d · 0 days at the anvil</text>
+<text x="920" y="304" text-anchor="end" fill="#8a7f74" font-size="12">streak 1d · 1 days at the anvil</text>
 </svg>

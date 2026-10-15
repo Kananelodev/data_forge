@@ -11,21 +11,21 @@ Every push re-strikes the gates and redraws this board.
 
 ### ⚒️ Rank: **Cinder** — _the forge is cold — strike the first spark_
 
-`░░░░░░░░░░░░░░░░░░░░░░░░` **0 XP** · 150 XP to **Striker** ,
+`████████████████░░░░░░░░` **100 XP** · 50 XP to **Striker**
 
-**Quests:** 0/17 forged · **Streak:** 0 day(s) · **Days at the anvil:** 0 · **Forge heat:** ❄️
+**Quests:** 1/17 forged · **Streak:** 1 day(s) · **Days at the anvil:** 1 · **Forge heat:** 🔥
 
 #### 📣 Last push
 - 🔥 The forge is lit for the first time. Your journey begins.
 
 #### 🎯 Next on the anvil
-- 🟠 **q01 · Two Kinds of Database** (+100 XP)
+- 🟠 **q02 · Light the Warehouse** (+150 XP)
 
 #### 🗺️ The map
 
 | Region | State | Quests |
 |---|---|---|
-| Foundry Floor | 🔥 active | 0/2 |
+| Foundry Floor | 🔥 active | 1/2 |
 | Query Crucible | 🔒 locked | 0/4 |
 | Ore Mines | 🔒 locked | 0/3 |
 | Shaping Anvil | 🔒 locked | 0/2 |
@@ -37,8 +37,8 @@ Every push re-strikes the gates and redraws this board.
 
 | | Quest | Region | XP | Teaches |
 |---|---|---|---|---|
-| 🟠 | **q01** Two Kinds of Database | Foundry Floor | 100 | OLTP vs OLAP; row vs columnar storage — why analytics scans less |
-| 🔒 | **q02** Light the Warehouse | Foundry Floor | 150 | DuckDB as an OLAP engine; schemas; medallion (bronze/silver/gold) layers |
+| ✅ | **q01** Two Kinds of Database | Foundry Floor | 100 | OLTP vs OLAP; row vs columnar storage — why analytics scans less |
+| 🟠 | **q02** Light the Warehouse | Foundry Floor | 150 | DuckDB as an OLAP engine; schemas; medallion (bronze/silver/gold) layers |
 | 🔒 | **q03** Weigh the Ore | Query Crucible | 150 | GROUP BY, aggregates, HAVING, ORDER BY |
 | 🔒 | **q04** Windows into the Fire | Query Crucible | 200 | Window functions — running totals, ranking, PARTITION BY |
 | 🔒 | **q05** Read the Smoke | Query Crucible | 200 | Reading EXPLAIN query plans; finding the expensive operation |
@@ -58,7 +58,7 @@ Every push re-strikes the gates and redraws this board.
 Legend: ✅ forged · 🔨 half-done · 🟠 available · 🔒 locked · ⚒️ gate not forged yet
 </details>
 
-<sub>Board regenerated automatically on push · 2026-10-09</sub>
+<sub>Board regenerated automatically on push · 2026-10-13</sub>
 <!-- FORGE:END -->
 
 ---
