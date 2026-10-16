@@ -16,11 +16,7 @@ Every push re-strikes the gates and redraws this board.
 **Quests:** 2/17 forged · **Streak:** 1 day(s) · **Days at the anvil:** 2 · **Forge heat:** 🔥
 
 #### 📣 Last push
-- ✅ Quest forged: **Two Kinds of Database** (+100 XP)
-- ✅ Quest forged: **Light the Warehouse** (+150 XP)
-- 🗺️ New region unlocked: **Query Crucible**
-- 🏆 Region cleared: **Foundry Floor**
-- ⚒️  RANK UP → **Striker** — you can keep a fire lit
+- 🔨 Progress committed. The fire holds steady — keep striking.
 
 #### 🎯 Next on the anvil
 - 🟠 **q03 · Weigh the Ore** (+150 XP)
