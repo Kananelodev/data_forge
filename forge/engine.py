@@ -39,6 +39,7 @@ def gate_results_from_junit(xml_path: Path) -> dict[str, bool]:
     by_file: dict[str, dict] = {}
     for case in tree.iter("testcase"):
         f = case.get("file") or case.get("classname", "")
+        f = f.replace("\\", "/")          # Windows reports gates\test_x.py
         rec = by_file.setdefault(f, {"ran": 0, "bad": 0})
         skipped = any(c.tag == "skipped" for c in case)
         failed = any(c.tag in ("failure", "error") for c in case)
@@ -53,7 +54,7 @@ def _journal_dates() -> list[date]:
     """Dates pulled from `date: YYYY-MM-DD` lines in journal entries."""
     out: list[date] = []
     for p in JOURNAL_DIR.glob("q*.md"):
-        m = re.search(r"date:\s*(\d{4})-(\d{2})-(\d{2})", p.read_text())
+        m = re.search(r"date:\s*(\d{4})-(\d{2})-(\d{2})", p.read_text(encoding="utf-8"))
         if m:
             out.append(date(int(m[1]), int(m[2]), int(m[3])))
     return sorted(set(out))
@@ -63,7 +64,7 @@ def _has_reflection(qid: str) -> bool:
     p = JOURNAL_DIR / f"{qid}.md"
     if not p.exists():
         return False
-    text = p.read_text()
+    text = p.read_text(encoding="utf-8")
     if _TEMPLATE_MARKER in text:
         return False
     body = re.sub(r"\s+", " ", text).strip()
@@ -175,7 +176,7 @@ def compute_state(doc: dict, gate_passed: dict[str, bool]) -> dict:
 def load_prev() -> dict | None:
     if STATE_FILE.exists():
         try:
-            return json.loads(STATE_FILE.read_text())
+            return json.loads(STATE_FILE.read_text(encoding="utf-8"))
         except json.JSONDecodeError:
             return None
     return None
@@ -216,4 +217,4 @@ def diff_events(prev: dict | None, cur: dict) -> list[str]:
 
 def save_state(cur: dict) -> None:
     STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
-    STATE_FILE.write_text(json.dumps(cur, indent=2))
+    STATE_FILE.write_text(json.dumps(cur, indent=2), encoding="utf-8")

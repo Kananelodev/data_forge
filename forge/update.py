@@ -49,18 +49,28 @@ def main() -> None:
     print("=" * 60)
     for e in events:
         print("  " + e.replace("**", ""))
+
+    # Say exactly why a started quest isn't forged yet.
+    half = [q for q in cur["quests"] if q["status"] == "in_progress"]
+    if half:
+        print("\n  Not forged yet:")
+        for q in half:
+            missing = "journal" if q["gate_ok"] else "gate"
+            hint = (f"journal/{q['id']}.md missing, too short, or still has the template line"
+                    if missing == "journal" else "gate tests still failing")
+            print(f"   {q['id']} {q['title']}: {missing} ✘  ({hint})")
     print()
 
     # Hand events to the GitHub Action (commit message + job summary)
     summary = os.environ.get("GITHUB_STEP_SUMMARY")
     if summary:
-        with open(summary, "a") as fh:
+        with open(summary, "a", encoding="utf-8") as fh:
             fh.write(f"## ⚒️ {r['name']} — {cur['xp']} XP\n\n")
             fh.writelines(f"- {e}\n" for e in events)
     out = os.environ.get("GITHUB_OUTPUT")
     if out:
         headline = events[0].replace("**", "")[:70]
-        with open(out, "a") as fh:
+        with open(out, "a", encoding="utf-8") as fh:
             fh.write(f"headline={headline}\n")
 
 

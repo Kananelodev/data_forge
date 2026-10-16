@@ -1,14 +1,14 @@
 {
-  "xp": 100,
+  "xp": 250,
   "rank": {
-    "index": 0,
-    "name": "Cinder",
-    "flavour": "the forge is cold \u2014 strike the first spark",
-    "floor": 0,
-    "next_name": "Striker",
-    "next_floor": 150,
-    "pct_to_next": 67,
-    "xp_to_next": 50,
+    "index": 1,
+    "name": "Striker",
+    "flavour": "you can keep a fire lit",
+    "floor": 150,
+    "next_name": "Journeyman Smith",
+    "next_floor": 400,
+    "pct_to_next": 40,
+    "xp_to_next": 150,
     "is_max": false
   },
   "regions": [
@@ -18,8 +18,8 @@
       "order": 1,
       "blurb": "How data is stored, and why analytics storage is different.",
       "total": 2,
-      "done": 1,
-      "state": "active"
+      "done": 2,
+      "state": "cleared"
     },
     {
       "id": "sql",
@@ -28,7 +28,7 @@
       "blurb": "SQL deep enough to answer anything \u2014 and to know why it's slow.",
       "total": 4,
       "done": 0,
-      "state": "locked"
+      "state": "active"
     },
     {
       "id": "ingestion",
@@ -95,9 +95,9 @@
       "xp": 150,
       "teaches": "DuckDB as an OLAP engine; schemas; medallion (bronze/silver/gold) layers",
       "maps_to": "passport-pipeline Iteration 1",
-      "status": "available",
-      "gate_ok": false,
-      "reflected": false
+      "status": "complete",
+      "gate_ok": true,
+      "reflected": true
     },
     {
       "id": "q03",
@@ -106,7 +106,7 @@
       "xp": 150,
       "teaches": "GROUP BY, aggregates, HAVING, ORDER BY",
       "maps_to": null,
-      "status": "locked",
+      "status": "available",
       "gate_ok": false,
       "reflected": false
     },
@@ -266,12 +266,12 @@
     }
   ],
   "counts": {
-    "complete": 1,
+    "complete": 2,
     "total": 17,
     "playable": 6
   },
   "streak": 1,
   "heat": 1,
-  "days_active": 1,
-  "generated_for": "2026-10-13"
+  "days_active": 2,
+  "generated_for": "2026-10-16"
 }

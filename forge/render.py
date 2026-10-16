@@ -100,12 +100,12 @@ def render_board(state: dict, events: list[str]) -> str:
 
 
 def write_readme(state: dict, events: list[str]) -> None:
-    text = README.read_text()
+    text = README.read_text(encoding="utf-8")
     if START not in text or END not in text:
         raise SystemExit("README.md is missing the FORGE:START / FORGE:END markers.")
     head, rest = text.split(START, 1)
     _, tail = rest.split(END, 1)
-    README.write_text(f"{head}{START}\n{render_board(state, events)}\n{END}{tail}")
+    README.write_text(f"{head}{START}\n{render_board(state, events)}\n{END}{tail}", encoding="utf-8")
 
 
 # ---------------------------------------------------------------------------
@@ -198,4 +198,4 @@ def render_svg(state: dict) -> str:
 
 def write_svg(state: dict) -> None:
     SVG_OUT.parent.mkdir(parents=True, exist_ok=True)
-    SVG_OUT.write_text(render_svg(state))
+    SVG_OUT.write_text(render_svg(state), encoding="utf-8")

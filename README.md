@@ -9,24 +9,28 @@ Every push re-strikes the gates and redraws this board.
 <!-- FORGE:START -->
 <p align="center"><img src="assets/forge_map.svg" alt="Forge map" width="100%"/></p>
 
-### ⚒️ Rank: **Cinder** — _the forge is cold — strike the first spark_
+### ⚒️ Rank: **Striker** — _you can keep a fire lit_
 
-`████████████████░░░░░░░░` **100 XP** · 50 XP to **Striker**
+`██████████░░░░░░░░░░░░░░` **250 XP** · 150 XP to **Journeyman Smith**
 
-**Quests:** 1/17 forged · **Streak:** 1 day(s) · **Days at the anvil:** 1 · **Forge heat:** 🔥
+**Quests:** 2/17 forged · **Streak:** 1 day(s) · **Days at the anvil:** 2 · **Forge heat:** 🔥
 
 #### 📣 Last push
-- 🔥 The forge is lit for the first time. Your journey begins.
+- ✅ Quest forged: **Two Kinds of Database** (+100 XP)
+- ✅ Quest forged: **Light the Warehouse** (+150 XP)
+- 🗺️ New region unlocked: **Query Crucible**
+- 🏆 Region cleared: **Foundry Floor**
+- ⚒️  RANK UP → **Striker** — you can keep a fire lit
 
 #### 🎯 Next on the anvil
-- 🟠 **q02 · Light the Warehouse** (+150 XP)
+- 🟠 **q03 · Weigh the Ore** (+150 XP)
 
 #### 🗺️ The map
 
 | Region | State | Quests |
 |---|---|---|
-| Foundry Floor | 🔥 active | 1/2 |
-| Query Crucible | 🔒 locked | 0/4 |
+| Foundry Floor | 🏆 cleared | 2/2 |
+| Query Crucible | 🔥 active | 0/4 |
 | Ore Mines | 🔒 locked | 0/3 |
 | Shaping Anvil | 🔒 locked | 0/2 |
 | Long Furnace | 🔒 locked | 0/3 |
@@ -38,8 +42,8 @@ Every push re-strikes the gates and redraws this board.
 | | Quest | Region | XP | Teaches |
 |---|---|---|---|---|
 | ✅ | **q01** Two Kinds of Database | Foundry Floor | 100 | OLTP vs OLAP; row vs columnar storage — why analytics scans less |
-| 🟠 | **q02** Light the Warehouse | Foundry Floor | 150 | DuckDB as an OLAP engine; schemas; medallion (bronze/silver/gold) layers |
-| 🔒 | **q03** Weigh the Ore | Query Crucible | 150 | GROUP BY, aggregates, HAVING, ORDER BY |
+| ✅ | **q02** Light the Warehouse | Foundry Floor | 150 | DuckDB as an OLAP engine; schemas; medallion (bronze/silver/gold) layers |
+| 🟠 | **q03** Weigh the Ore | Query Crucible | 150 | GROUP BY, aggregates, HAVING, ORDER BY |
 | 🔒 | **q04** Windows into the Fire | Query Crucible | 200 | Window functions — running totals, ranking, PARTITION BY |
 | 🔒 | **q05** Read the Smoke | Query Crucible | 200 | Reading EXPLAIN query plans; finding the expensive operation |
 | ⚒️ | **q06** Join the Metals | Query Crucible | 200 | Joins, CTEs, NULL traps, fan-out duplication |
@@ -58,7 +62,7 @@ Every push re-strikes the gates and redraws this board.
 Legend: ✅ forged · 🔨 half-done · 🟠 available · 🔒 locked · ⚒️ gate not forged yet
 </details>
 
-<sub>Board regenerated automatically on push · 2026-10-13</sub>
+<sub>Board regenerated automatically on push · 2026-10-16</sub>
 <!-- FORGE:END -->
 
 ---

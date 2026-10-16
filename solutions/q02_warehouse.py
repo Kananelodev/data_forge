@@ -16,13 +16,20 @@ JARGON
 """
 
 
+import duckdb
+
+
+
 def create_medallion_schemas(con) -> None:
     """Create bronze, silver and gold schemas in the given DuckDB connection.
 
     Must be safe to call twice (calling again must not error). That property has
     a name you'll meet properly in q12 — for now, just make it true.
     """
-    raise NotImplementedError
+    con.execute("CREATE SCHEMA IF NOT EXISTS bronze")
+    con.execute("CREATE SCHEMA IF NOT EXISTS silver")
+    con.execute("CREATE SCHEMA IF NOT EXISTS gold")
+
 
 
 def create_bronze_table(con, name: str, columns: list[str]) -> None:
@@ -32,4 +39,24 @@ def create_bronze_table(con, name: str, columns: list[str]) -> None:
       _ingested_at  TIMESTAMP   — when the row landed
       _source_file  VARCHAR     — which file it came from
     """
-    # raise NotImplementedError 
+    cols = ", ".join(f"{col} VARCHAR" for col in columns)
+
+    con.execute(
+        f"""
+        CREATE TABLE IF NOT EXISTS bronze.{name} (
+            {cols},
+            _ingested_at TIMESTAMP,
+            _source_file VARCHAR
+        )
+        """
+    ) 
+
+con = duckdb.connect()
+
+create_medallion_schemas(con)
+
+create_bronze_table(con, "customers", ["customer_id", "email"])
+
+create_bronze_table(con, "customers", ["order_id", "customer_id", "amount"])
+
+con.sql("SELECT * FROM bronze.customers").show()

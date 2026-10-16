@@ -15,7 +15,7 @@ def load(path: Path | None = None) -> dict:
     Each quest gets sensible defaults so later ones can be listed before their
     gate exists ('forthcoming' quests).
     """
-    doc = yaml.safe_load((path or QUESTS_FILE).read_text()) or {}
+    doc = yaml.safe_load((path or QUESTS_FILE).read_text(encoding="utf-8")) or {}
     doc.setdefault("regions", [])
     doc.setdefault("quests", [])
     for q in doc["quests"]:
