@@ -58,7 +58,7 @@ Every push re-strikes the gates and redraws this board.
 Legend: ✅ forged · 🔨 half-done · 🟠 available · 🔒 locked · ⚒️ gate not forged yet
 </details>
 
-<sub>Board regenerated automatically on push · 2026-10-16</sub>
+<sub>Board regenerated automatically on push · 2026-10-17</sub>
 <!-- FORGE:END -->
 
 ---
