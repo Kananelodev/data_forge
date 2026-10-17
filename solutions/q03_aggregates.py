@@ -20,7 +20,7 @@ def revenue_by_province_sql() -> str:
     """Total amount per province.
     Columns: (province, revenue). Order: revenue descending.
     """
-    raise NotImplementedError
+    # raise NotImplementedError
 
 
 def busy_merchants_sql() -> str:
